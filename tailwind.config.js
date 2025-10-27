@@ -10,6 +10,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins_400Regular"],
+        "poppins-thin": ["Poppins_100Thin"],
+        "poppins-extralight": ["Poppins_200ExtraLight"],
+        "poppins-light": ["Poppins_300Light"],
+        "poppins-medium": ["Poppins_500Medium"],
+        "poppins-semibold": ["Poppins_600SemiBold"],
+        "poppins-bold": ["Poppins_700Bold"],
+        "poppins-extrabold": ["Poppins_800ExtraBold"],
+        "poppins-black": ["Poppins_900Black"],
+      },
       colors: {
         neutral: {
           0: "#E1E6EF",
