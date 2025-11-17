@@ -1,275 +1,283 @@
-
-
-// Car
-import AirplaneSquareIcon from '@/components/icons/car/airplane-square/airplane-square';
-import AirplaneIcon from '@/components/icons/car/airplane/airplane';
-import BusSquareIcon from '@/components/icons/car/bus-square/bus-square';
-import BusIcon from '@/components/icons/car/bus/bus';
-import CarIcon from '@/components/icons/car/car/car';
-import DrivingIcon from '@/components/icons/car/driving/driving';
-import PlaneArrivalIcon from '@/components/icons/car/plane-arrival/plane-arrival';
-import PlaneDepartureIcon from '@/components/icons/car/plane-departure/plane-departure';
-import PlaneInflightIcon from '@/components/icons/car/plane-inflight/plane-inflight';
-import PlaneIcon from '@/components/icons/car/plane/plane';
-import ShipSquareIcon from '@/components/icons/car/ship-square/ship-square';
-import ShipIcon from '@/components/icons/car/ship/ship';
-import SmartCarIcon from '@/components/icons/car/smart-car/smart-car';
-import TrainIcon from '@/components/icons/car/train/train';
-//
-
-// Location
-import Flag01Icon from '@/components/icons/location/flag-01/flag-01';
-import FlagIcon from '@/components/icons/location/flag/flag';
-import GPSIcon from '@/components/icons/location/gps/gps';
-import HugeIcon from '@/components/icons/location/huge/huge';
-import LocationHugeIcon from '@/components/icons/location/location-huge/location-huge';
-import LocationSlashIcon from '@/components/icons/location/location-slash/location-slash';
-import LocationIcon from '@/components/icons/location/location/location';
-import MapIcon from '@/components/icons/location/map/map';
-import NavigationMapIcon from '@/components/icons/location/navigation-map/navigation-map';
-import NavigationMapsIcon from '@/components/icons/location/navigation-maps/navigation-maps';
-import PeopleIcon from '@/components/icons/location/people/people';
-import PinIcon from '@/components/icons/location/pin/pin';
-import RouteSquareIcon from '@/components/icons/location/route-square/route-square';
-import RoutingIcon from '@/components/icons/location/routing/routing';
-import SignPostIcon from '@/components/icons/location/sign-post/sign-post';
-import SlackIcon from '@/components/icons/location/slack/slack';
-//
-
-// Money
-import CardIcon from '@/components/icons/money/card/card';
-import CashIcon from '@/components/icons/money/cash/cash';
-import CoinIcon from '@/components/icons/money/coin/coin';
-import WalletIcon from '@/components/icons/money/wallet/wallet';
-//
-
-import { ScrollView, Text, View } from 'react-native';
+import OnboardingSlider from '@/components/onboarding-slider';
+import TravelServiceCarousel from '@/components/travel-service-carousel';
+import { Image } from 'expo-image';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { FlatList, ScrollView, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <ScrollView>
-      <View className="p-16 flex flex-row gap-10">
-        <Text className="w-20">Money</Text>
-        <View className="flex gap-4 items-center justify-start">
-          <CardIcon size='large' />
-          <CardIcon size='medium' />
-          <CardIcon size='small' />
-        </View>
+    <ScrollView contentContainerStyle={{ backgroundColor: "#FAFDFF" }} className="flex-1" showsVerticalScrollIndicator={false}>
+      <StatusBar style="light" />
 
-        <View className="flex gap-4 items-center justify-start">
-          <CashIcon size='large' />
-          <CashIcon size='medium' />
-          <CashIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <CoinIcon size='large' />
-          <CoinIcon size='medium' />
-          <CoinIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <WalletIcon size='large' />
-          <WalletIcon size='medium' />
-          <WalletIcon size='small' />
-        </View>
+      <View className="h-auto w-full">
+        <OnboardingSlider />
       </View>
 
-      <View className="p-16 flex flex-row gap-10">
-        <Text className="w-20">Location</Text>
-
-        <View className="flex gap-4 items-center justify-start">
-          <FlagIcon size='large' />
-          <FlagIcon size='medium' />
-          <FlagIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <Flag01Icon size='large' />
-          <Flag01Icon size='medium' />
-          <Flag01Icon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <GPSIcon size='large' />
-          <GPSIcon size='medium' />
-          <GPSIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <HugeIcon size='large' />
-          <HugeIcon size='medium' />
-          <HugeIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <LocationIcon size='extra-large' />
-          <LocationIcon size='large' />
-          <LocationIcon size='medium' />
-          <LocationIcon size='small' />
-          <LocationIcon size='extra-small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <LocationHugeIcon size='extra-large' />
-          <LocationHugeIcon size='large' />
-          <LocationHugeIcon size='medium' />
-          <LocationHugeIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <LocationSlashIcon size='large' />
-          <LocationSlashIcon size='medium' />
-          <LocationSlashIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <MapIcon size='extra-large' />
-          <MapIcon size='large' />
-          <MapIcon size='medium' />
-          <MapIcon size='small' />
-          <MapIcon size='extra-small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <NavigationMapIcon size='extra-large' />
-          <NavigationMapIcon size='large' />
-          <NavigationMapIcon size='medium' />
-          <NavigationMapIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <NavigationMapsIcon size='large' />
-          <NavigationMapsIcon size='medium' />
-          <NavigationMapsIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <PeopleIcon size='large' />
-          <PeopleIcon size='medium' />
-          <PeopleIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <PinIcon size='large' />
-          <PinIcon size='medium' />
-          <PinIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <RouteSquareIcon size='large' />
-          <RouteSquareIcon size='medium' />
-          <RouteSquareIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <RoutingIcon size='extra-large' />
-          <RoutingIcon size='large' />
-          <RoutingIcon size='medium' />
-          <RoutingIcon size='small' />
-          <RoutingIcon size='extra-small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <SignPostIcon size='large' />
-          <SignPostIcon size='medium' />
-          <SignPostIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <SlackIcon size='large' />
-          <SlackIcon size='medium' />
-          <SlackIcon size='small' />
-        </View>
+      <View className="h-auto w-full">
+        <TravelServiceCarousel />
       </View>
 
-      <View className="p-16 flex flex-row gap-10">
-        <Text className="w-20">Car</Text>
-
-        <View className="flex gap-4 items-center justify-start">
-          <AirplaneIcon size='large' />
-          <AirplaneIcon size='medium' />
-          <AirplaneIcon size='small' />
+      <View className="h-auto gap-1">
+        <View className=" px-[20px] py-[10px] ">
+          <Text className='font-poppins-bold font-700 text-[28px] text-primary-700 leading-[42px]'>Best for you</Text>
+          <Text className='font-inter-regular font-400 text-[14px] text-[#8A8A8A] leading-[19px]'>Discover new destinations</Text>
         </View>
 
-        <View className="flex gap-4 items-center justify-start">
-          <AirplaneSquareIcon size='large' />
-          <AirplaneSquareIcon size='medium' />
-          <AirplaneSquareIcon size='small' />
+        <BestPlaces />
+      </View>
+
+      <View className="h-auto gap-1 px-[20px] py-[10px]">
+        <View className="flex flex-row items-center justify-between py-[8px]">
+          <Text className='font-poppins-bold font-700 text-[16px] text-text-600 leading-[19px]'>The best accommodations</Text>
+          <Text className='font-poppins-bold font-700 text-[14px] text-primary-700 leading-[19px]'>View All</Text>
         </View>
 
-        <View className="flex gap-4 items-center justify-start">
-          <BusIcon size='large' />
-          <BusIcon size='medium' />
-          <BusIcon size='small' />
+        <BestHotels />
+      </View>
+
+      <View className="h-auto gap-1 px-[20px] py-[30px]">
+        <BestTour />
+      </View>
+
+      <View className="h-auto gap-1 px-[20px] py-[10px]">
+        <View className="flex flex-row items-center justify-between py-[8px]">
+          <Text className='font-poppins-bold font-700 text-[16px] text-text-600 leading-[19px]'>The best gastronomy for you</Text>
+          <Text className='font-poppins-bold font-700 text-[14px] text-primary-700 leading-[19px]'>View All</Text>
         </View>
 
-        <View className="flex gap-4 items-center justify-start">
-          <BusSquareIcon size='large' />
-          <BusSquareIcon size='medium' />
-          <BusSquareIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <CarIcon size='large' />
-          <CarIcon size='medium' />
-          <CarIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <DrivingIcon size='large' />
-          <DrivingIcon size='medium' />
-          <DrivingIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <PlaneIcon size='large' />
-          <PlaneIcon size='medium' />
-          <PlaneIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <PlaneArrivalIcon size='large' />
-          <PlaneArrivalIcon size='medium' />
-          <PlaneArrivalIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <PlaneDepartureIcon size='large' />
-          <PlaneDepartureIcon size='medium' />
-          <PlaneDepartureIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <PlaneInflightIcon size='large' />
-          <PlaneInflightIcon size='medium' />
-          <PlaneInflightIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <ShipIcon size='large' />
-          <ShipIcon size='medium' />
-          <ShipIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <ShipSquareIcon size='large' />
-          <ShipSquareIcon size='medium' />
-          <ShipSquareIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <SmartCarIcon size='large' />
-          <SmartCarIcon size='medium' />
-          <SmartCarIcon size='small' />
-        </View>
-
-        <View className="flex gap-4 items-center justify-start">
-          <TrainIcon size='large' />
-          <TrainIcon size='medium' />
-          <TrainIcon size='small' />
-        </View>
+        <BestFood />
       </View>
     </ScrollView>
   );
 }
+
+/* INIT FLAT LIST PLACES */
+
+// @ts-expect-error Async Server Component
+import IMAGE_1 from '@/assets/images/components/best-places-slider/best-places-slider-1.png';
+// @ts-expect-error Async Server Component
+import IMAGE_2 from '@/assets/images/components/best-places-slider/best-places-slider-2.png';
+// @ts-expect-error Async Server Component
+import IMAGE_3 from '@/assets/images/components/best-places-slider/best-places-slider-3.png';
+
+// Sample data for best places
+const ITEMS_BEST_PLACES = [
+  {
+    id: 1,
+    title: 'Tropical Paradise',
+    subtitle: 'Bali, Indonesia',
+    imageUrl: IMAGE_1,
+  },
+  {
+    id: 2,
+    title: 'Mountain Escape',
+    subtitle: 'Swiss Alps',
+    imageUrl: IMAGE_2,
+  },
+  {
+    id: 3,
+    title: 'Urban Adventure',
+    subtitle: 'Tokyo, Japan',
+    imageUrl: IMAGE_3,
+  },
+];
+
+// Type definition for best place items
+interface BestPlaceItem {
+  id: number;
+  title: string;
+  subtitle: string;
+  imageUrl: string;
+}
+
+const BestPlaces = () => {
+  const renderItem = ({ item }: { item: BestPlaceItem }) => {
+    return (
+      <View className="bg-white gap-2 rounded-[16px] w-auto h-auto shadow-sm">
+        <View className='w-[173px] h-[128px]'>
+          <Image
+            source={item.imageUrl}
+            style={{ borderTopLeftRadius: 16, borderTopRightRadius: 16, width: "100%", height: "100%" }}
+            contentFit='cover'
+          />
+        </View>
+        <View className="px-[12px] py-[10px] min-h-[56px]">
+          <Text className="font-poppins-medium font-500 text-[12px] text-text-900 leading-[16px]">{item.title}</Text>
+          <Text className="font-inter-regular font-400 text-[12px] text-[#8A8A8A] leading-[16px]">{item.subtitle}</Text>
+        </View>
+      </View>
+    )
+  };
+
+  return (
+    <FlatList
+      horizontal
+      data={ITEMS_BEST_PLACES}
+      renderItem={renderItem}
+      className='mt-2 mb-4 px-[20px] pb-1 mr-[10px]'
+      keyExtractor={(item) => item.id.toString()}
+      showsHorizontalScrollIndicator={false}
+      ItemSeparatorComponent={() => <View className="w-[8px]" />}
+    />
+  )
+};
+
+/* FINISH FLAT LIST PLACES */
+
+/* INIT FLAT LIST HOTEL */
+
+// @ts-expect-error Async Server Component
+import IMAGE_HOTEL_1 from '@/assets/images/components/best-hotels-slider/best-hotels-slider-1.jpg';
+// @ts-expect-error Async Server Component
+import IMAGE_HOTEL_2 from '@/assets/images/components/best-hotels-slider/best-hotels-slider-2.jpg';
+// @ts-expect-error Async Server Component
+import IMAGE_HOTEL_3 from '@/assets/images/components/best-hotels-slider/best-hotels-slider-3.jpg';
+import StarIcon from '@/components/icons/support-like-question-share/star/star';
+
+// Sample data for best hotels
+const ITEMS_BEST_HOTELS = [
+  {
+    id: 1,
+    name: "Luxury Hotel",
+    title: 'Tropical Paradise',
+    subtitle: 'A luxurious stay',
+    pricePerNight: 200,
+    images: [IMAGE_HOTEL_1, IMAGE_HOTEL_2, IMAGE_HOTEL_3]
+  }
+];
+
+// Type definition for best hotel items
+interface BestHotelItem {
+  id: number,
+  name: string,
+  title: string,
+  subtitle: string,
+  pricePerNight: number,
+  images: string[]
+}
+
+const BestHotels = () => {
+  const renderItem = ({ item }: { item: string }) => {
+    return (
+      <View className='w-[140px] h-[110px] rounded-[8px]'>
+        <Image
+          source={item}
+          style={{ borderRadius: 16, width: "100%", height: "100%" }}
+          contentFit='cover'
+        />
+      </View>
+    )
+  };
+
+  const item: BestHotelItem = ITEMS_BEST_HOTELS[0];
+
+  return (
+    <View className="bg-white gap-2 rounded-[16px] w-auto h-auto shadow-100 ">
+      <View className='flex gap-[8px] p-[16px]'>
+        <Text className="font-poppins-bold font-700 text-[16px] text-text-600 leading-[22px]">{item.title}</Text>
+        <Text className="font-inter-regular font-400 text-[13px] text-text-400 leading-[13px]">{item.subtitle}</Text>
+        <View className="flex flex-row justify-between items-center">
+          <View className="flex flex-row items-center gap-1">
+            <Text className='font-poppins-bold font-[900] text-text-900 text-[14px] leading-[19px]'>${item.pricePerNight}</Text>
+            <Text className='font-poppins-bold font-[900] text-text-400 text-[14px] leading-[19px]'>/night</Text>
+          </View>
+          <View className="flex flex-row items-center justify-center">
+            <Text className="flex flex-row items-center justify-center text-text-400 leading-[20px] mr-2">
+              2 ·
+            </Text>
+            <StarIcon size='small' fill={"#F2CB04"} />
+            <Text className="flex flex-row items-center justify-center text-text-400 leading-[20px] ml-1">
+              4.5
+            </Text>
+          </View>
+        </View>
+      </View>
+
+      <FlatList
+        horizontal
+        data={item.images}
+        renderItem={renderItem}
+        className='mt-2 mb-4 px-[10px] pb-1 mx-[10px]'
+        keyExtractor={(item) => item}
+        showsHorizontalScrollIndicator={false}
+        ItemSeparatorComponent={() => <View className="w-[8px]" />}
+      />
+    </View>
+  )
+};
+
+/* FINISH FLAT LIST HOTEL */
+
+/* INIT FLAT LIST HOTEL */
+
+// @ts-expect-error Async Server Component
+import IMAGE_FOOD_1 from '@/assets/images/components/best-food/best-food-1.jpg';
+import BestTour from '@/components/best-tour';
+import HeartIcon from '@/components/icons/support-like-question-share/heart/heart';
+
+// Sample data for best hotels
+const ITEMS_BEST_FOOD = [
+  {
+    id: 1,
+    name: "Luxury Hotel",
+    title: 'Tropical Paradise',
+    subtitle: 'A luxurious stay',
+    pricePerNight: 200,
+    images: [IMAGE_FOOD_1]
+  }
+];
+
+// Type definition for best hotel items
+interface BestFoodItem {
+  id: number,
+  name: string,
+  title: string,
+  subtitle: string,
+  pricePerNight: number,
+  images: string[]
+}
+
+const BestFood = () => {
+  const item: BestFoodItem = ITEMS_BEST_FOOD[0];
+
+  return (
+    <View className="bg-white gap-2 rounded-[16px] w-auto h-auto shadow-sm">
+      <View className='relative w-full h-[170px]'>
+        {/* Chip best seller */}
+        <Text className="bg-primary-900 font-poppins-bold font-700 text-[12px] border-2 border-primary-900 text-white w-auto absolute top-[16px] z-10 px-[12px] py-[5px] rounded-[16px] left-[16px] backdrop-blur-[50px]">
+          Best Seller
+        </Text>
+        {/* Chip star */}
+        <View className="bg-warning-700 border-2 border-warning-700  w-auto absolute top-[16px] z-10 px-[12px] py-[5px] rounded-[16px] right-[16px] backdrop-blur-[50px] flex flex-row items-center">
+          <StarIcon size='small' fill={"#F2CB04"} />
+          <Text className="text-white ml-1 text-[12px] font-poppins-bold font-700">
+            4.5
+          </Text>
+        </View>
+        <Image
+          source={item.images[0]}
+          style={{ borderTopLeftRadius: 16, borderTopRightRadius: 16, width: "100%", height: "100%" }}
+          contentFit='cover'
+        />
+      </View>
+      <View className="relative p-[12px]">
+        <View className="bg-white border-2 border-white shadow-soft-black w-[44px] h-[44px] absolute top-[-30] z-10 rounded-full right-[16px] backdrop-blur-[50px] flex flex-row items-center justify-center">
+          <HeartIcon size='extra-large' fill={"#B91C21"} />
+        </View>
+
+        <Text className="font-poppins-bold font-700 text-[16px] leading-[20px] text-[#000000CC]">{item.title}</Text>
+
+        <View className="flex flex-row gap-[4px] mt-[4px]">
+          <Text className="font-inter-regular font-400 text-[13px] text-text-600 leading-[13px]">$$</Text>
+          <Text className="font-inter-regular font-400 text-[13px] text-text-600 leading-[13px]">·</Text>
+          <Text className="font-inter-regular font-400 text-[13px] text-text-600 leading-[13px]">Japanese</Text>
+          <Text className="font-inter-regular font-400 text-[13px] text-text-600 leading-[13px]">·</Text>
+          <Text className="font-inter-regular font-400 text-[13px] text-text-600 leading-[13px]">30 mins</Text>
+        </View>
+      </View>
+    </View>
+  )
+};
+
+/* FINISH FLAT LIST HOTEL */

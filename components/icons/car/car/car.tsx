@@ -14,14 +14,14 @@ const CarIcon: React.FC<CarIconProps> = (props) => {
     return <CarIconSmall {...props} />
 };
 
-const CarIconLarge: React.FC<CarIconProps> = () => (
+const CarIconLarge: React.FC<CarIconProps> = ({ color }) => (
     <Svg
         width={24}
         height={24}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -30,21 +30,21 @@ const CarIconLarge: React.FC<CarIconProps> = () => (
     </Svg>
 )
 
-const CarIconMedium: React.FC<CarIconProps> = () => (
+const CarIconMedium: React.FC<CarIconProps> = ({ color }) => (
     <Svg
         width={20}
         height={20}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
             d="M12.925 2.358h-5.85c-2.075 0-2.534 1.034-2.8 2.3l-.942 4.509h13.333l-.941-4.509c-.267-1.266-.725-2.3-2.8-2.3Z"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -53,14 +53,14 @@ const CarIconMedium: React.FC<CarIconProps> = () => (
     </Svg>
 )
 
-const CarIconSmall: React.FC<CarIconProps> = () => (
+const CarIconSmall: React.FC<CarIconProps> = ({ color }) => (
     <Svg
         width={18}
         height={18}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}

@@ -5,7 +5,9 @@ module.exports = {
   content: [
     "./App.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
-    "./app/(tabs)/**/*.{js,jsx,ts,tsx}",
+    "./app/(public)/**/*.{js,jsx,ts,tsx}",
+    "./app/(private)/**/*.{js,jsx,ts,tsx}",
+    "./app/(private)/(tabs)/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
@@ -65,7 +67,7 @@ module.exports = {
           300: "#DDDDDD",
           400: "#AAABAD",
           500: "#8A8A8B",
-          600: "#656464",
+          600: "#646464",
           900: "#444444"
         },
         background: {
@@ -80,7 +82,9 @@ module.exports = {
         "200": "0px 0px 12px 0px #97C3FF66",
         "300": "0px 0px 16px 0px #97C3FF33",
         "400": "0px 0px 32px 0px #97C3FF40",
-        "500": "0px 0px 32px 0px #97C3FF66"
+        "500": "0px 0px 32px 0px #97C3FF66",
+        'soft-gray': '0px 0px 32px 0px #A6A7AE',
+        'soft-black': "0px 4px 4px 0px #00000040"
       },
       borderRadius: {
         "4": "4px",

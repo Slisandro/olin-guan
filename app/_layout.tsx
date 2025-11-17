@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { useSplashAnimation } from "@/hooks/useSplashAnimation";
 import { Stack } from "expo-router";
 import { Animated, View } from "react-native";
+import "../global.css";
 
 // Este componente decide la ruta inicial
 function App() {
@@ -22,7 +23,7 @@ function App() {
     if (authStatus.isFirstLaunch) {
         return (
             <Stack screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="(public)/onboarding" />
+                <Stack.Screen name="(public)/auth" />
             </Stack>
         );
     }
@@ -69,7 +70,7 @@ function Splash() {
             }}
         >
             <Animated.Image
-                source={require("@/assets/images/logo.png")}
+                source={require("@/assets/images/logo/large.png")}
                 style={{
                     opacity,
                     width: 240,

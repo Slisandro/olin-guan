@@ -14,21 +14,21 @@ const WalletIcon: React.FC<WalletIconProps> = (props) => {
     return <WalletIconSmall {...props} />
 };
 
-const WalletIconLarge: React.FC<WalletIconProps> = () => (
+const WalletIconLarge: React.FC<WalletIconProps> = ({ color }) => (
     <Svg
         width={24}
         height={24}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
             d="M22 12v5c0 3-2 5-5 5H7c-3 0-5-2-5-5v-5c0-2.72 1.64-4.62 4.19-4.94.26-.04.53-.06.81-.06h10c.26 0 .51.01.75.05C20.33 7.35 22 9.26 22 12Z"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -37,21 +37,21 @@ const WalletIconLarge: React.FC<WalletIconProps> = () => (
     </Svg>
 )
 
-const WalletIconMedium: React.FC<WalletIconProps> = () => (
+const WalletIconMedium: React.FC<WalletIconProps> = ({ color }) => (
     <Svg
         width={20}
         height={20}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
             d="M18.334 10v4.167c0 2.5-1.667 4.166-4.167 4.166H5.834c-2.5 0-4.167-1.666-4.167-4.166V10c0-2.267 1.367-3.85 3.492-4.117.216-.033.441-.05.675-.05h8.333c.217 0 .425.009.625.042 2.15.25 3.542 1.842 3.542 4.125Z"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -60,21 +60,21 @@ const WalletIconMedium: React.FC<WalletIconProps> = () => (
     </Svg>
 )
 
-const WalletIconSmall: React.FC<WalletIconProps> = () => (
+const WalletIconSmall: React.FC<WalletIconProps> = ({ color }) => (
     <Svg
         width={18}
         height={18}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
             d="M16.5 9v3.75c0 2.25-1.5 3.75-3.75 3.75h-7.5C3 16.5 1.5 15 1.5 12.75V9c0-2.04 1.23-3.465 3.143-3.705.195-.03.397-.045.607-.045h7.5c.195 0 .383.007.563.037C15.246 5.512 16.5 6.945 16.5 9Z"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}

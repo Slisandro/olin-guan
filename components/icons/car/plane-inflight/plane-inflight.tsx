@@ -14,14 +14,14 @@ const PlaneInflightIcon: React.FC<PlaneInflightIconProps> = (props) => {
     return <PlaneInflightIconSmall {...props} />
 };
 
-const PlaneInflightIconLarge: React.FC<PlaneInflightIconProps> = () => (
+const PlaneInflightIconLarge: React.FC<PlaneInflightIconProps> = ({ color }) => (
     <Svg
         width={24}
         height={24}
         fill="none"
     >
         <G
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -41,14 +41,14 @@ const PlaneInflightIconLarge: React.FC<PlaneInflightIconProps> = () => (
     </Svg>
 )
 
-const PlaneInflightIconMedium: React.FC<PlaneInflightIconProps> = () => (
+const PlaneInflightIconMedium: React.FC<PlaneInflightIconProps> = ({ color }) => (
     <Svg
         width={20}
         height={20}
         fill="none"
     >
         <G
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -68,7 +68,7 @@ const PlaneInflightIconMedium: React.FC<PlaneInflightIconProps> = () => (
     </Svg>
 )
 
-const PlaneInflightIconSmall: React.FC<PlaneInflightIconProps> = () => (
+const PlaneInflightIconSmall: React.FC<PlaneInflightIconProps> = ({ color }) => (
     <Svg
         width={18}
         height={18}
@@ -76,7 +76,7 @@ const PlaneInflightIconSmall: React.FC<PlaneInflightIconProps> = () => (
     >
         <G clipPath="url(#a)">
             <G
-                stroke="#646464"
+                stroke={color}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={1.125}

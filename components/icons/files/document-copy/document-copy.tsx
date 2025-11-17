@@ -16,17 +16,17 @@ const DocumentCopyIcon: React.FC<DocumentCopyIconProps> = (props) => {
     return <DocumentCopyIconSmall {...props} />
 };
 
-const DocumentCopyIconExtraLarge: React.FC<DocumentCopyIconProps> = () => (
+const DocumentCopyIconExtraLarge: React.FC<DocumentCopyIconProps> = ({ color }) => (
     <Svg width={24} height={24} fill="none">
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
             d="M17 13.4v3c0 4-1.6 5.6-5.6 5.6H7.6c-4 0-5.6-1.6-5.6-5.6v-3.8C2 8.6 3.6 7 7.6 7h3"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -35,17 +35,17 @@ const DocumentCopyIconExtraLarge: React.FC<DocumentCopyIconProps> = () => (
     </Svg>
 )
 
-const DocumentCopyIconLarge: React.FC<DocumentCopyIconProps> = () => (
+const DocumentCopyIconLarge: React.FC<DocumentCopyIconProps> = ({ color}) => (
     <Svg width={20} height={20} fill="none">
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
             d="M14.167 11.167v2.5c0 3.333-1.333 4.667-4.667 4.667H6.334C3 18.334 1.667 17 1.667 13.667V10.5c0-3.333 1.333-4.667 4.667-4.667h2.5"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -54,17 +54,17 @@ const DocumentCopyIconLarge: React.FC<DocumentCopyIconProps> = () => (
     </Svg>
 )
 
-const DocumentCopyIconMedium: React.FC<DocumentCopyIconProps> = () => (
+const DocumentCopyIconMedium: React.FC<DocumentCopyIconProps> = ({ color}) => (
     <Svg width={18} height={18} fill="none">
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
             d="M12.75 10.05v2.25c0 3-1.2 4.2-4.2 4.2H5.7c-3 0-4.2-1.2-4.2-4.2V9.45c0-3 1.2-4.2 4.2-4.2h2.25"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -73,17 +73,17 @@ const DocumentCopyIconMedium: React.FC<DocumentCopyIconProps> = () => (
     </Svg>
 )
 
-const DocumentCopyIconSmall: React.FC<DocumentCopyIconProps> = () => (
+const DocumentCopyIconSmall: React.FC<DocumentCopyIconProps> = ({ color}) => (
     <Svg width={14} height={14} fill="none">
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={0.875}
             d="M9.917 7.817v1.75c0 2.333-.933 3.266-3.267 3.266H4.434c-2.334 0-3.267-.933-3.267-3.266V7.35c0-2.333.933-3.267 3.267-3.267h1.75"
         />
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={0.875}

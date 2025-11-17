@@ -14,14 +14,14 @@ const ShipSquareIcon: React.FC<ShipSquareIconProps> = (props) => {
     return <ShipSquareIconSmall {...props} />
 };
 
-const ShipSquareIconLarge: React.FC<ShipSquareIconProps> = () => (
+const ShipSquareIconLarge: React.FC<ShipSquareIconProps> = ({ color }) => (
     <Svg
         width={24}
         height={24}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -30,14 +30,14 @@ const ShipSquareIconLarge: React.FC<ShipSquareIconProps> = () => (
     </Svg>
 )
 
-const ShipSquareIconMedium: React.FC<ShipSquareIconProps> = () => (
+const ShipSquareIconMedium: React.FC<ShipSquareIconProps> = ({ color }) => (
     <Svg
         width={20}
         height={20}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -46,14 +46,14 @@ const ShipSquareIconMedium: React.FC<ShipSquareIconProps> = () => (
     </Svg>
 )
 
-const ShipSquareIconSmall: React.FC<ShipSquareIconProps> = () => (
+const ShipSquareIconSmall: React.FC<ShipSquareIconProps> = ({ color }) => (
     <Svg
         width={18}
         height={18}
         fill="none"
     >
         <Path
-            stroke="#646464"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}

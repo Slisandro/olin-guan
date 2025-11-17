@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 const seenOnboarding = await AsyncStorage.getItem("seenOnboarding");
                 const authToken = await AsyncStorage.getItem("authToken");
                 setAuthStatus({
-                    isSignedIn: true,
+                    isSignedIn: false,
                     isFirstLaunch: true,
                 });
             } catch (error) {

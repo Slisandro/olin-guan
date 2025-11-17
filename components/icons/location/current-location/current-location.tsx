@@ -16,7 +16,7 @@ const CurrentLocationIcon: React.FC<CurrentLocationIconProps> = (props) => {
     return <CurrentLocationIconSmall {...props} />
 };
 
-const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => (
+const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = ({ color }) => (
     <Svg
         width={24}
         height={24}
@@ -26,7 +26,7 @@ const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => 
             cx={12}
             cy={12}
             r={3}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -45,7 +45,7 @@ const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => 
             cx={12}
             cy={12}
             r={8}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -61,7 +61,7 @@ const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => 
             strokeWidth={1.5}
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -76,7 +76,7 @@ const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => 
             d="M12 2v2"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -91,7 +91,7 @@ const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => 
             d="M12 20v2"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -106,7 +106,7 @@ const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => 
             d="M20 12h2"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.5}
@@ -123,7 +123,7 @@ const CurrentLocationIconExtraLarge: React.FC<CurrentLocationIconProps> = () => 
     </Svg>
 )
 
-const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
+const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = ({ color }) => (
     <Svg
         width={20}
         height={20}
@@ -133,7 +133,7 @@ const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
             cx={10}
             cy={10}
             r={2.5}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -152,7 +152,7 @@ const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
             cx={10}
             cy={10}
             r={6.667}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -168,7 +168,7 @@ const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
             strokeWidth={1.25}
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -183,7 +183,7 @@ const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
             d="M10 1.667v1.666"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -198,7 +198,7 @@ const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
             d="M10 16.667v1.666"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -213,7 +213,7 @@ const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
             d="M16.667 10h1.667"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.25}
@@ -230,7 +230,7 @@ const CurrentLocationIconLarge: React.FC<CurrentLocationIconProps> = () => (
     </Svg>
 )
 
-const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
+const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = ({ color }) => (
     <Svg
         width={18}
         height={18}
@@ -240,7 +240,7 @@ const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
             cx={9}
             cy={9}
             r={2.25}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -259,7 +259,7 @@ const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
             cx={9}
             cy={9}
             r={6}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -275,7 +275,7 @@ const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
             strokeWidth={1.125}
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -290,7 +290,7 @@ const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
             d="M9 1.5V3"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -305,7 +305,7 @@ const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
             d="M9 15v1.5"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -320,7 +320,7 @@ const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
             d="M15 9h1.5"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -337,7 +337,7 @@ const CurrentLocationIconMedium: React.FC<CurrentLocationIconProps> = () => (
     </Svg>
 )
 
-const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = () => (
+const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = ({ color }) => (
     <Svg
         width={18}
         height={18}
@@ -347,7 +347,7 @@ const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = () => (
             cx={9}
             cy={9}
             r={2.25}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -366,7 +366,7 @@ const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = () => (
             cx={9}
             cy={9}
             r={6}
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -382,7 +382,7 @@ const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = () => (
             strokeWidth={1.125}
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -397,7 +397,7 @@ const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = () => (
             d="M9 1.5V3"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -412,7 +412,7 @@ const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = () => (
             d="M9 15v1.5"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
@@ -427,7 +427,7 @@ const CurrentLocationIconSmall: React.FC<CurrentLocationIconProps> = () => (
             d="M15 9h1.5"
         />
         <Path
-            stroke="#4B465C"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={1.125}
