@@ -1,7 +1,6 @@
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
 import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import Svg, { ClipPath, Defs, G, LinearGradient as LinearGradientSvg, Path, RadialGradient, Stop } from "react-native-svg";
 // @ts-expect-error
@@ -15,8 +14,11 @@ import StarIcon from "@/components/icons/support-like-question-share/star/star";
 import IMAGE_1 from "@/assets/images/components/best-destinations/best-destinations-1.jpg";
 // @ts-expect-error
 import IMAGE_2 from "@/assets/images/components/best-destinations/best-destinations-2.jpg";
+import { useRouter } from "expo-router";
 
 export default function Profile() {
+    const router = useRouter();
+
     return (
         <LinearGradient
             colors={["#55B6C8", "#1B77F2"]}
@@ -48,7 +50,7 @@ export default function Profile() {
                     <View className="p-[20px] shadow-100 rounded-[12px] bg-white flex items-start justify-between gap-[10px]">
                         <View className="w-full flex-row justify-between items-center">
                             <Text className='font-poppins-bold font-700 text-[16px] text-text-600 leading-[19px]'>My Profile</Text>
-                            <View className="flex-row items-center gap-1">
+                            <Pressable onPress={() => router.push("/(private)/(profile)/edit")} className="flex-row items-center gap-1">
                                 <Svg
                                     width={20}
                                     height={20}
@@ -73,7 +75,7 @@ export default function Profile() {
                                     />
                                 </Svg>
                                 <Text className='font-poppins-bold font-700 text-[12px] text-text-600 leading-[19px]'>Edit</Text>
-                            </View>
+                            </Pressable>
                         </View>
 
                         <View className="gap-[10px]">
@@ -205,7 +207,7 @@ export default function Profile() {
                                 Travel preferences
                             </Text>
 
-                            <Pressable className="flex-row gap-[4px] items-center">
+                            <Pressable onPress={() => router.push("/(private)/(plan_trip)")} className="flex-row gap-[4px] items-center">
                                 <ADD />
                                 <Text className="font-poppins-bold font-700 text-[12px] text-primary-700">
                                     Add new adventure
@@ -234,7 +236,7 @@ export default function Profile() {
                                             <StarIcon fill="#F2CB04" size="large" />
                                             <StarIcon fill="#F2CB04" size="large" />
                                         </View>
-                                        
+
                                         <View className="w-[130px] h-[80px] rounded-[8px] mt-1">
                                             <Image source={item} style={{ width: "100%", height: "100%", borderRadius: 8 }} />
                                         </View>
@@ -256,7 +258,7 @@ export default function Profile() {
                     </View>
 
                     <View className="p-[20px] w-full shadow-100 rounded-[12px] bg-white flex items-start justify-between gap-[10px]">
-                        <Pressable className="flex-row gap-[10px] items-center bg-primary-700 p-[10px] w-full rounded-[8px]">
+                        <Pressable onPress={() => router.push("/(private)/(profile)/change-password")} className="flex-row gap-[10px] items-center bg-primary-700 p-[10px] w-full rounded-[8px]">
                             <LOCK />
                             <Text className="font-poppins-bold font-700 text-[12px] text-white">Cambiar contraseña</Text>
                         </Pressable>
@@ -271,7 +273,7 @@ export default function Profile() {
                             <Text className="font-poppins-bold font-700 text-[12px] text-text-500">Centro de ayuda</Text>
                         </Pressable>
 
-                        <Pressable className="flex-row gap-[10px] items-center p-[10px] w-full rounded-[8px]">
+                        <Pressable onPress={() => router.push("/(public)/auth")} className="flex-row gap-[10px] items-center p-[10px] w-full rounded-[8px]">
                             <LOGOUT />
                             <Text className="font-poppins-bold font-700 text-[12px] text-text-500">Cerrar sesión</Text>
                         </Pressable>

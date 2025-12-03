@@ -41,7 +41,7 @@ const services: TravelService[] = [
     }
 ];
 
-const CategoryCarousel: React.FC = () => {
+const CategoryCarousel = ({ classNameContainer = "p-[12px]" }: { classNameContainer?: string }) => {
     const [selectedCategories, setSelectedCategories] = React.useState<string[]>(['1']);
 
     const renderItem = ({ item }: { item: TravelService }) => {
@@ -74,14 +74,14 @@ const CategoryCarousel: React.FC = () => {
             showsHorizontalScrollIndicator={false}
             style={styles.container}
             ItemSeparatorComponent={() => <View className='w-[8px]' />}
+            className={classNameContainer}
         />
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow: 0,
-        padding: 12
+        flexGrow: 0
     },
     item: {
         alignItems: 'center',

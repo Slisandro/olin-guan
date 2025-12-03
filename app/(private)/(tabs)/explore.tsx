@@ -3,8 +3,7 @@ import SearchNormalIcon from "@/components/icons/search/search-normal/search-nor
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { FlatList, ScrollView, Text, TextInput, View } from "react-native";
+import { FlatList, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 
 export default function Explore() {
   return (
@@ -198,6 +197,7 @@ import IMAGE_FOOD_1 from '@/assets/images/components/best-food/best-food-1.jpg';
 import IMAGE_FOOD_2 from '@/assets/images/components/best-food/best-food-2.jpg';
 import HeartIcon from '@/components/icons/support-like-question-share/heart/heart';
 import StarIcon from "@/components/icons/support-like-question-share/star/star";
+import { useRouter } from "expo-router";
 
 // Sample data for best hotels
 const ITEMS_BEST_FOOD = [
@@ -236,10 +236,11 @@ const ITEMS_BEST_FOOD = [
 ];
 
 const BestFood = () => {
+  const router = useRouter();
   return (
-    <View className="gap-[16px] py-[16px]">
+    <View  className="gap-[16px] py-[16px]">
       {ITEMS_BEST_FOOD.map(item => (
-        <View className="bg-white gap-2 rounded-[16px] w-auto h-auto shadow-sm">
+        <Pressable onPress={() => router.push("/(private)/(plan_trip)/booking-restaurant")} className="bg-white gap-2 rounded-[16px] w-auto h-auto shadow-sm">
           <View className='relative w-full h-[170px]'>
             {/* Chip best seller */}
             <Text className="bg-primary-900 font-poppins-bold font-700 text-[12px] border-2 border-primary-900 text-white w-auto absolute top-[16px] z-10 px-[12px] py-[5px] rounded-[16px] left-[16px] backdrop-blur-[50px]">
@@ -273,7 +274,7 @@ const BestFood = () => {
               <Text className="font-inter-regular font-400 text-[13px] text-text-600 leading-[13px]">30 mins</Text>
             </View>
           </View>
-        </View>
+        </Pressable>
       ))}
     </View>
   )

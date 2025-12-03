@@ -5,11 +5,10 @@ import EmailIcon from "@/components/icons/message/email/email";
 import EyeSlashIcon from "@/components/icons/security/eye-slash/eye-slash";
 import EyeIcon from "@/components/icons/security/eye/eye";
 import LockIcon from "@/components/icons/security/lock/lock";
-import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import React, { useEffect, useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { useEffect, useState } from "react";
+import { Image, Pressable, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SignUp() {
@@ -39,7 +38,7 @@ export default function SignUp() {
         <SafeAreaView className="flex-1 items-center justify-end gap-10">
             <Image
                 source={require("@/assets/images/auth/bg-auth.png")}
-                contentFit="cover"
+                resizeMode="cover"
                 className="absolute w-full h-full"
             />
 
@@ -56,21 +55,21 @@ export default function SignUp() {
     );
 
     return (
-        <SafeAreaView className="flex-1 items-center justify-end gap-10">
+        <View className="flex-1 items-center justify-evenly gap-4">
             <Image
                 source={require("@/assets/images/auth/bg-auth.png")}
-                contentFit="cover"
+                resizeMode="cover"
                 className="absolute w-full h-full"
             />
 
-            <Image source={require("@/assets/images/logo/full.png")} className="w-[150px] h-[150px] mx-auto" />
+            <Image source={require("@/assets/images/logo/full.png")} className="w-[120px] h-[120px] mx-auto mt-2" />
 
-            <View className="h-3/4 w-full items-center bg-[#FFFFFFCC] rounded-t-[80px] pt-[25px] px-[20px]">
+            <View className="flex-1 w-full justify-center items-center bg-[#FFFFFFCC] rounded-t-[80px] pt-[20px] px-[20px]  mt-auto">
                 <Text className="text-text-900 text-[30px] font-bold font-poppins-bold">Create your account</Text>
-                <Text className="mt-[15px] mb-[10px] text-center text-text-900 text-[16px] font-[400] font-poppins">Please fill in your details to create your account and enjoy our services.</Text>
+                <Text className="mt-[5px] mb-[10px] text-center text-text-900 text-[16px] font-[400] font-poppins">Please fill in your details to create your account and enjoy our services.</Text>
 
                 {/* Input email */}
-                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-[20px]">
+                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-[10px]">
                     <EmailIcon color="#646464" size="medium" />
                     <TextInput
                         placeholder="Email"
@@ -79,7 +78,7 @@ export default function SignUp() {
                     />
                 </View>
 
-                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-[20px]">
+                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-[10px]">
                     <LockIcon color="#646464" size="medium" />
                     <TextInput
                         placeholder="Password"
@@ -98,7 +97,7 @@ export default function SignUp() {
                     </Pressable>
                 </View>
 
-                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-2">
+                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-1">
                     <LockIcon color={error ? "#B91C21" : "#646464"} size="medium" />
                     <TextInput
                         placeholder="Password"
@@ -125,23 +124,27 @@ export default function SignUp() {
                     </View>
                 )}
 
-                <Text className="flex-row gap-2 text-center mb-[40px] mt-[10px]">
-                    By signing up you agree to our Terms & Conditions
-                    <Pressable className="ml-1">
+                <View className="flex-row w-full flex-wrap justify-center gap-2 items-center text-center mb-[20px] mt-[10px]">
+                    <Text>
+                        By signing up you agree to our Terms & Conditions
+                    </Text>
+                    <Pressable className="ml-0.5">
                         <Text className="text-primary-700">
                             Terms & Conditions
                         </Text>
                     </Pressable>
-                    and
-                    <Pressable className="ml-1">
+                    <Text>
+                        and
+                    </Text>
+                    <Pressable className="ml-0.5">
                         <Text className="text-primary-700">
                             Privacy Policy
                         </Text>
                     </Pressable>
-                </Text>
+                </View>
 
                 <Pressable
-                    className="space-x-2 bg-secondary-700 w-full rounded-[16px] py-[16px]"
+                    className="space-x-2 bg-secondary-700 w-full rounded-[16px] py-[12px]"
                 >
                     <Text className="text-neutral-900 text-center text-[16px] font-poppins-semibold">
                         Sign up
@@ -149,7 +152,7 @@ export default function SignUp() {
                 </Pressable>
 
                 {/* Divider */}
-                <View className="mt-[15px] flex-row gap-4 items-center">
+                <View className="mt-[5px] flex-row gap-2 items-center">
                     <LinearGradient
                         colors={['#F2CB0400', '#94A604']}
                         start={{ x: 0, y: 0.5 }}
@@ -165,38 +168,40 @@ export default function SignUp() {
                     />
                 </View>
 
-                <View className="flex-row w-full justify-between mt-[20px]">
+                <View className="flex-row w-full justify-between mt-[10px]">
                     <Pressable
                         onPress={handleSubmit}
-                        className="px-[40px] py-[16px] border border-[#D1D3DB] rounded-[16px]"
+                        className="px-[40px] py-[12px] border border-[#D1D3DB] rounded-[16px]"
                     >
                         <GoogleIcon />
                     </Pressable>
 
                     <Pressable
                         onPress={handleSubmit}
-                        className="px-[40px] py-[16px] border border-[#D1D3DB] rounded-[16px]"
+                        className="px-[40px] py-[12px] border border-[#D1D3DB] rounded-[16px]"
                     >
                         <FacebookIcon />
                     </Pressable>
 
                     <Pressable
                         onPress={handleSubmit}
-                        className="px-[40px] py-[16px] border border-[#D1D3DB] rounded-[16px]"
+                        className="px-[40px] py-[12px] border border-[#D1D3DB] rounded-[16px]"
                     >
                         <AppleIcon />
                     </Pressable>
                 </View>
 
-                <Text className="flex-row gap-2 mt-[25px]">
-                    Don’t have an Account?
+                <View className="flex-row gap-0 mt-[25px]">
+                    <Text>
+                        Don’t have an Account?
+                    </Text>
                     <Pressable className="ml-1" onPress={handleSubmit}>
                         <Text className="text-primary-700">
-                            Sign up!
+                            Sign in!
                         </Text>
                     </Pressable>
-                </Text>
+                </View>
             </View>
-        </SafeAreaView>
+        </View>
     )
 }

@@ -5,11 +5,11 @@ import EmailIcon from "@/components/icons/message/email/email";
 import EyeSlashIcon from "@/components/icons/security/eye-slash/eye-slash";
 import EyeIcon from "@/components/icons/security/eye/eye";
 import LockIcon from "@/components/icons/security/lock/lock";
-import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import React, { useEffect, useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { useEffect, useState } from "react";
+import { Image, Pressable, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login() {
@@ -40,7 +40,7 @@ export default function Login() {
         <SafeAreaView className="flex-1 items-center justify-end gap-10">
             <Image
                 source={require("@/assets/images/auth/bg-auth.png")}
-                contentFit="cover"
+                resizeMode="cover"
                 className="absolute w-full h-full"
             />
 
@@ -57,21 +57,23 @@ export default function Login() {
     );
 
     return (
-        <SafeAreaView className="flex-1 items-center justify-end gap-20">
+        <View className="flex-1 items-center justify-around">
+            <StatusBar style="light" />
+
             <Image
                 source={require("@/assets/images/auth/bg-auth.png")}
-                contentFit="cover"
+                resizeMode="cover"
                 className="absolute w-full h-full"
             />
 
-            <Image source={require("@/assets/images/logo/full.png")} className="w-[150px] h-[150px] mx-auto" />
+            <Image source={require("@/assets/images/logo/full.png")} className="w-[140px] h-[140px] mx-auto" />
 
-            <View className="h-2/3 w-full items-center bg-[#FFFFFFCC] rounded-t-[80px] pt-[25px] px-[20px]">
+            <View className="h-[auto] w-full items-center bg-[#FFFFFFCC] rounded-t-[80px] pt-[20px] px-[20px] mt-auto">
                 <Text className="text-text-900 text-[36px] font-bold font-poppins-bold">Welcome back</Text>
-                <Text className="mt-[15px] mb-[14px] text-text-900 text-[18px] font-[400] font-poppins">Welcome back</Text>
+                <Text className="mt-[5px] mb-[14px] text-text-900 text-[18px] font-[400] font-poppins">Welcome back</Text>
 
                 {/* Input email */}
-                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-[50px]">
+                <View className="w-full flex-row items-center bg-white rounded-12 pl-[10px] py-[13px] px-[20px] mb-[20px]">
                     <EmailIcon color="#646464" size="medium" />
                     <TextInput
                         placeholder="Email"
@@ -113,7 +115,7 @@ export default function Login() {
                 <View className="flex-row justify-between w-full mt-[10px]">
                     <Pressable
                         onPress={() => setChecked(!checked)}
-                        className="flex-row items-center space-x-2"
+                        className="flex-row items-center space-x-2 gap-1"
                     >
                         <View
                             className={`w-5 h-5 rounded-md border-2 ${checked ? "border-primary-700 bg-primary-700" : "border-primary-700 bg-white"
@@ -137,7 +139,7 @@ export default function Login() {
 
                 <Pressable
                     onPress={handleSubmit}
-                    className="space-x-2 bg-secondary-700 w-full rounded-[16px] py-[16px] mt-[40px]"
+                    className="space-x-2 bg-secondary-700 w-full rounded-[16px] py-[16px] mt-[20px]"
                 >
                     <Text className="text-neutral-900 text-center text-[16px] font-poppins-semibold">
                         Log in
@@ -145,7 +147,7 @@ export default function Login() {
                 </Pressable>
 
                 {/* Divider */}
-                <View className="mt-[20px] flex-row gap-4 items-center">
+                <View className="mt-[10px] flex-row gap-4 items-center">
                     <LinearGradient
                         colors={['#F2CB0400', '#94A604']}
                         start={{ x: 0, y: 0.5 }}
@@ -161,7 +163,7 @@ export default function Login() {
                     />
                 </View>
 
-                <View className="flex-row w-full justify-between mt-[15px]">
+                <View className="flex-row w-full justify-between mt-[10px]">
                     <Pressable
                         onPress={handleSubmit}
                         className="px-[40px] py-[16px] border border-[#D1D3DB] rounded-[16px]"
@@ -183,16 +185,17 @@ export default function Login() {
                         <AppleIcon />
                     </Pressable>
                 </View>
-
-                <Text className="flex-row gap-2 mt-[15px]">
-                    Don’t have an Account?
-                    <Pressable className="ml-1" onPress={() => router.push("/(public)/auth/sign-up")}>
+                <View className="flex-row gap-0 py-[15px] items-center justify-center w-full">
+                    <Text>
+                        Don’t have an Account?
+                    </Text>
+                    <Pressable className="ml-1 my-0" onPress={() => router.push("/(public)/auth/sign-up")}>
                         <Text className="text-primary-700">
                             Sign up!
                         </Text>
                     </Pressable>
-                </Text>
+                </View>
             </View>
-        </SafeAreaView>
+        </View>
     )
 }

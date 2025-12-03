@@ -9,6 +9,8 @@ import MAP from '@/assets/images/components/trip/map.png';
 import { Image } from "expo-image";
 
 export default function MyTrip() {
+    const router = useRouter();
+
     return (
         <LinearGradient
             colors={["#55B6C8", "#1B77F2"]}
@@ -36,7 +38,9 @@ export default function MyTrip() {
                     <View className="flex flex-row items-center justify-between">
                         <Text className='font-poppins-bold font-700 text-[16px] text-text-600 leading-[19px]'>My Trip</Text>
 
-                        <Text className='font-poppins-bold font-700 text-[14px] text-primary-700 leading-[19px]'>View All</Text>
+                        <Pressable onPress={() => router.push("/(private)/(plan_trip)/edit-trip")}  className='font-poppins-bold font-700 text-[14px] text-primary-700 leading-[19px]'>
+                            <Text className="font-poppins-bold font-700 text-[14px] text-primary-700 leading-[19px]">View All</Text>
+                        </Pressable>
                     </View>
 
                     <View className="gap-[20px]">
@@ -394,6 +398,8 @@ const ITEMS_SCHEDULES = [
 ]
 
 const ListSchedules = () => {
+    const router = useRouter();
+
     const renderItem = ({ item }: { item: any }) => (
         <View className="px-[12px] py-[14px] shadow-200 bg-white gap-[10px] rounded-[16px]">
             <View className="flex-row justify-between items-start">
@@ -409,7 +415,7 @@ const ListSchedules = () => {
 
             <View className="gap-[12px] pt-2">
                 {item.description.map((item: string) => (
-                    <Text className="font-poppins font-[400] text-[14px] text-text-600">{item}</Text>
+                    <Text key={item} className="font-poppins font-[400] text-[14px] text-text-600">{item}</Text>
                 ))}
             </View>
 
@@ -420,7 +426,7 @@ const ListSchedules = () => {
                 </View>
 
                 <View className="flex-row items-center gap-[8px]">
-                    <Pressable className="p-[8px] bg-[#D9E6F8] rounded-full">
+                    <Pressable onPress={() => router.push("/(private)/(plan_trip)/add-activity")} className="p-[8px] bg-[#D9E6F8] rounded-full">
                         <Svg
                             width={20}
                             height={20}
@@ -444,7 +450,7 @@ const ListSchedules = () => {
                         </Svg>
                     </Pressable>
 
-                    <Pressable className="p-[8px] bg-[#D9E6F8] rounded-full">
+                    <Pressable onPress={() => router.push("/(private)/(plan_trip)/edit-day")} className="p-[8px] bg-[#D9E6F8] rounded-full">
                         <Svg
                             width={20}
                             height={20}
@@ -647,6 +653,7 @@ const ITEMS_TICKETS = [
 
 // @ts-expect-error
 import HOTEL_ICON from "@/assets/images/components/trip/hotel.png";
+import { useRouter } from "expo-router";
 
 const ListTickets = () => {
     const renderItem = ({ item }: { item: any }) => (

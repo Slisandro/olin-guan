@@ -2,6 +2,7 @@ import { AccountProvider } from "@/contexts/AccountContext";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { useSplashAnimation } from "@/hooks/useSplashAnimation";
 import { Stack } from "expo-router";
+import React from "react";
 import { Animated, View } from "react-native";
 import "../global.css";
 
@@ -31,7 +32,7 @@ function App() {
     if (authStatus.isSignedIn) {
         return (
             <Stack screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="(private)/(tabs)" />
+                <Stack.Screen name="(private)/(tabs)/index" />
             </Stack>
         );
     }

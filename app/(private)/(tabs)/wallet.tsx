@@ -1,10 +1,12 @@
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { G, Path } from "react-native-svg";
 
 export default function Wallet() {
+    const router = useRouter();
+
     return (
         <LinearGradient
             colors={["#55B6C8", "#1B77F2"]}
@@ -82,7 +84,7 @@ export default function Wallet() {
                             </View>
                         </View>
                         <View className="w-full flex flex-row justify-between">
-                            <Pressable className="items-center flex-row justify-center gap-[4px] py-[7px] px-[28px] bg-[#FCF9E4] border-[1px] border-[#F2CB04] rounded-[12px]">
+                            <Pressable onPress={() => router.push("/(private)/(found)/add-found")} className="items-center flex-row justify-center gap-[4px] py-[7px] px-[28px] bg-[#FCF9E4] border-[1px] border-[#F2CB04] rounded-[12px]">
                                 <Svg
                                     width={20}
                                     height={20}
@@ -208,7 +210,7 @@ export default function Wallet() {
                         </Pressable>
                     </View>
 
-                    <Pressable className="flex flex-row items-center justify-center gap-[4px] py-[12px] w-full bg-[#1B77F2] rounded-[12px]">
+                    <Pressable onPress={() => router.push("/(private)/(found)/add-card")} className="flex flex-row items-center justify-center gap-[4px] py-[12px] w-full bg-[#1B77F2] rounded-[12px]">
                         <Text className="text-white font-poppins-semibold font-[600] text-[16px] ">Add payment card</Text>
                     </Pressable>
                 </View>
