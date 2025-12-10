@@ -8,20 +8,20 @@ import { useEffect, useState } from "react";
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { ClipPath, Defs, Ellipse, G, Path } from "react-native-svg";
 
-const CATEGORIES = [
-    { id: 1, label: "Accommodations", icon: <Building size={16} color="#004BAF" /> },
-    { id: 2, label: "Restaurants", icon: <Utensils size={16} color="#004BAF" /> },
-    { id: 3, label: "Tours", icon: <Map size={16} color="#004BAF" /> },
-    { id: 4, label: "Shoping", icon: <ShoppingBag size={16} color="#004BAF" /> },
-    { id: 5, label: "Nightlife", icon: <Martini size={16} color="#004BAF" /> },
-    { id: 6, label: "Lodging", icon: <Hotel size={16} color="#004BAF" /> },
-    { id: 7, label: "Outdoor Activities", icon: <Bike size={16} color="#004BAF" /> },
-];
 
 export default function ListCards() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [amount, setAmount] = useState("$250");
+    const CATEGORIES = [
+        { id: 1, label: "Accommodations", icon: <Building size={16} color="#004BAF" />, onPress: () => router.push("/(private)/(bar)/index") },
+        { id: 2, label: "Restaurants", icon: <Utensils size={16} color="#004BAF" />, onPress: () => router.push("/(private)/(bar)/index") },
+        { id: 3, label: "Tours", icon: <Map size={16} color="#004BAF" />, onPress: () => router.push("/(private)/(bar)/index") },
+        { id: 4, label: "Shoping", icon: <ShoppingBag size={16} color="#004BAF" />, onPress: () => router.push("/(private)/(bar)/index") },
+        { id: 5, label: "Nightlife", icon: <Martini size={16} color="#004BAF" />, onPress: () => router.push("/(private)/(bar)/index") },
+        { id: 6, label: "Lodging", icon: <Hotel size={16} color="#004BAF" />, onPress: () => router.push("/(private)/(bar)/index") },
+        { id: 7, label: "Outdoor Activities", icon: <Bike size={16} color="#004BAF" />, onPress: () => router.push("/(private)/(bar)/index") },
+    ];
 
     useEffect(() => {
         if (loading) {

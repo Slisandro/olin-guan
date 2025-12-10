@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import React from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import HouseIcon from './icons/building/house/house';
@@ -14,67 +15,77 @@ interface TravelService {
     title: string;
     description: string;
     icon: React.FC<{ size: string; color?: string }>;
+    onPress: () => any
 }
 
-// Sample data for travel services
-const services: TravelService[] = [
-    {
-        id: '1',
-        title: 'Car rental',
-        description: 'Find the best deals',
-        icon: ({ color }) => <CarIcon size={"large"} color={color} />
-    },
-    {
-        id: '2',
-        title: 'Lodging',
-        description: 'Comfortable stays',
-        icon: ({ color }) => <BedIcon size={"extra-large"} color={color} />
-    },
-    {
-        id: '3',
-        title: 'Restaurants',
-        description: 'Delicious food',
-        icon: ({ color }) => <BugHotIcon size={"large"} color={color} />
-    },
-    {
-        id: '4',
-        title: 'Nightlife',
-        description: 'Exciting venues',
-        icon: ({ color }) => <MusicIcon size={"extra-large"} color={color} />
-    },
-    {
-        id: '5',
-        title: 'Tour Packages',
-        description: 'Incredible adventures',
-        icon: ({ color }) => <ScubaMaskIcon size={"large"} color={color} />
-    },
-    {
-        id: '6',
-        title: 'Transport',
-        description: 'Convenience and comfort',
-        icon: ({ color }) => <BusSquareIcon size={"large"} color={color} />
-    },
-    {
-        id: '7',
-        title: 'Yacht rentals',
-        description: 'Sail in the finest',
-        icon: ({ color }) => <ShipSquareIcon size={"large"} color={color} />
-    },
-    {
-        id: '8',
-        title: 'Real estate module',
-        description: 'The best investment',
-        icon: ({ color }) => <HouseIcon size={"large"} color={color} />
-    },
-];
 
 const TravelServiceCarousel: React.FC = () => {
+    const router = useRouter();
     const [selectedServiceId, setSelectedServiceId] = React.useState<string>('1');
+    // Sample data for travel services
+    const services: TravelService[] = [
+        {
+            id: '1',
+            title: 'Car rental',
+            description: 'Find the best deals',
+            icon: ({ color }) => <CarIcon size={"large"} color={color} />,
+            onPress: () => router.push("/(private)/(car)/search")
+        },
+        {
+            id: '2',
+            title: 'Lodging',
+            description: 'Comfortable stays',
+            icon: ({ color }) => <BedIcon size={"extra-large"} color={color} />,
+            onPress: () => router.push("/(private)/(accommodation)/search")
+        },
+        {
+            id: '3',
+            title: 'Restaurants',
+            description: 'Delicious food',
+            icon: ({ color }) => <BugHotIcon size={"large"} color={color} />,
+            onPress: () => router.push("/(private)/(restaurant)/search")
+        },
+        {
+            id: '4',
+            title: 'Nightlife',
+            description: 'Exciting venues',
+            icon: ({ color }) => <MusicIcon size={"extra-large"} color={color} />,
+            onPress: () => router.push("/(private)/(bar)")
+        },
+        {
+            id: '5',
+            title: 'Tour Packages',
+            description: 'Incredible adventures',
+            icon: ({ color }) => <ScubaMaskIcon size={"large"} color={color} />,
+            onPress: () => router.push("/(private)/(tour)")
+        },
+        {
+            id: '6',
+            title: 'Transport',
+            description: 'Convenience and comfort',
+            icon: ({ color }) => <BusSquareIcon size={"large"} color={color} />,
+            onPress: () => router.push("/(private)/(bar)")
+        },
+        {
+            id: '7',
+            title: 'Yacht rentals',
+            description: 'Sail in the finest',
+            icon: ({ color }) => <ShipSquareIcon size={"large"} color={color} />,
+            onPress: () => router.push("/(private)/(yacht)/search")
+        },
+        {
+            id: '8',
+            title: 'Real estate module',
+            description: 'The best investment',
+            icon: ({ color }) => <HouseIcon size={"large"} color={color} />,
+            onPress: () => router.push("/(private)/(properties)/search")
+        },
+    ];
 
     const renderItem = ({ item }: { item: TravelService }) => {
         const isSelected = selectedServiceId === item.id;
         return (
-            <Pressable onPress={() => setSelectedServiceId(item.id)} style={[styles.item, isSelected ? { backgroundColor: '#D9E6F8' } : {}]} className="flex flex-row gap-4">
+            <Pressable onPress={() => {setSelectedServiceId(item.id); item.onPress()}} style={[styles.item, isSelected ? { backgroundColor: '#D9E6F8' } : {}]} className="flex flex-row gap-4">
                 {item.icon && <item.icon size='extra-large' color={isSelected ? '#1D4ED8' : '#B0B0B0'} />}
 
                 <View className="flex gap-[4px]">

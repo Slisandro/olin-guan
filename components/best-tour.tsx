@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Platform,
     Pressable,
@@ -12,10 +11,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import BACKGROUND_IMAGE_1 from '@/assets/images/components/best-tours/best-tours-1.jpg';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 
 const BestTour = () => {
+    const router = useRouter();
     return (
-        <Pressable style={styles.container} className='shadow-soft-gray rounded-[16px] bg-red'>
+        <Pressable onPress={() => router.push("/(private)/(tour)")} style={styles.container} className='shadow-soft-gray rounded-[16px] bg-red'>
             <Image
                 source={BACKGROUND_IMAGE_1}
                 style={[styles.image, { borderRadius: 16 }]}
